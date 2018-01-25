@@ -13,9 +13,20 @@ node /^instance-\d+$/ {
                 mode   => '0777'
         }
         class { '::nfs':
-                server_enabled => true,
+                client_enabled => true,
         }
-        Nfs::Client::Mount <<| |>>
+        file_line { 'instance_fstab':
+                path => '/etc/fstab',
+                line => 'master.c.ru-tensor-time-series.internal:/mnt/data /mnt/data nfs rsize=8192,wsize=8192,time
+o=14,intr',
+        }
+        #Nfs::Client::Mount <<| |>>
+        #Nfs::Client::Mount '/mnt/data'
+        nfs::client::mount { '/mnt/data':
+                server => 'master.c.ru-tensor-time-series.internal',
+                share => '/mnt/data',
+                ensure  => 'mounted',
+        }
 }
 node  /^master.*internal$/ {
         class { 'ntp':
