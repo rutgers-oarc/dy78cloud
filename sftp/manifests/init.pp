@@ -34,17 +34,17 @@ class sftp{
         groups  => 'sftpusers',
         before  => [Group['sftpusers']], 
     }
-    file { '/srv/sftp/dy78':
+    file { '/srv/sftp/dy78' :
         ensure => 'directory',
         mode   => '0701',
         before  => [Group['sftpusers'], File['/srv/sftp']],
     }   
-    file { '/srv/sftp/dy78/upload':
+    file { '/srv/sftp/dy78/upload' :
         ensure => 'directory',
         mode   => '0701',
         before  => [Group['sftpusers'], File['/srv/sftp/dy78']],
     }   
-    file { '/srv/sftp/dy78/download':
+    file { '/srv/sftp/dy78/download' :
         ensure => 'directory',
         mode   => '0704',
         before  => [Group['sftpusers'], File['/srv/sftp/dy78']],
@@ -55,17 +55,17 @@ class sftp{
         groups  => 'sftpusers',
         before  => [Group['sftpusers']], 
     }
-    file { '/srv/sftp/dyang':
+    file { '/srv/sftp/dyang' :
         ensure => 'directory',
         mode   => '0701',
         before  => [Group['sftpusers'], File['/srv/sftp']],
     }   
-    file { '/srv/sftp/dyang/upload':
+    file { '/srv/sftp/dyang/upload' :
         ensure => 'directory',
         mode   => '0701',
         before  => [Group['sftpusers'], File['/srv/sftp/dyang']],
     }   
-    file { '/srv/sftp/dyang/download':
+    file { '/srv/sftp/dyang/download' :
         ensure => 'directory',
         mode   => '0704',
         before  => [Group['sftpusers'], File['/srv/sftp/dyang']],
@@ -76,17 +76,17 @@ class sftp{
         groups  => 'sftpusers',
         before  => [Group['sftpusers']], 
     }
-    file { '/srv/sftp/ericmars':
+    file { '/srv/sftp/ericmars' :
         ensure => 'directory',
         mode   => '0701',
         before  => [Group['sftpusers'], File['/srv/sftp']],
     }   
-    file { '/srv/sftp/ericmars/upload':
+    file { '/srv/sftp/ericmars/upload' :
         ensure => 'directory',
         mode   => '0701',
         before  => [Group['sftpusers'], File['/srv/sftp/ericmars']],
     }   
-    file { '/srv/sftp/ericmars/download':
+    file { '/srv/sftp/ericmars/download' :
         ensure => 'directory',
         mode   => '0704',
         before  => [Group['sftpusers'], File['/srv/sftp/ericmars']],
