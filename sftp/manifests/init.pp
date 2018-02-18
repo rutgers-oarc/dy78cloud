@@ -79,7 +79,7 @@ class sftp{
     file { '/srv/sftp/ericmars':
         ensure => 'directory',
         mode   => '0701',
-        before  => [Group['sftpuser'], File['/srv/sftp']],
+        before  => [Group['sftpusers'], File['/srv/sftp']],
     }   
     file { '/srv/sftp/ericmars/upload':
         ensure => 'directory',
