@@ -1,4 +1,4 @@
-iclass local{
+class local{
         package { 'R' :
                 ensure  => 'installed',
         }

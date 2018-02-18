@@ -45,25 +45,7 @@ node  /^master.*internal$/ {
         clients => '*.c.ru-tensor-time-series.internal(rw,insecure,async,no_root_squash) localhost(rw)'
     }
     # sftp
-    package { 'openssh-server' :
-        ensure  => 'installed',
-    }
-    package { 'openssh-askpass' :
-        ensure  => 'installed',
-    }
-    group { 'sftpusers':
-        ensure => 'present',
-    }
-    file { '/srv/sftp/upload':
-        ensure => 'directory',
-        mode   => '0777'
-    }
-    # for our user
-    file { '/srv/sftp/download':
-        ensure => 'directory',
-        mode   => '0777'
-    }
-    
+    include sftp
 
     # slurm
     service { 'slurmctld' :
