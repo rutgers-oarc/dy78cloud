@@ -32,7 +32,7 @@ class sftp{
     # dy78
     user { 'dy78' :
         groups  => 'sftpuser',
-        before  => [Group['sftpuser'], 
+        before  => [Group['sftpuser']], 
     }
     file { '/srv/sftp/dy78':
         ensure => 'directory',
@@ -53,6 +53,7 @@ class sftp{
     # dyang
     user { 'dyang' :
         groups  => 'sftpuser',
+        before  => [Group['sftpuser']], 
     }
     file { '/srv/sftp/dyang':
         ensure => 'directory',
@@ -73,6 +74,7 @@ class sftp{
     # ericmars
     user { 'ericmars' :
         groups  => 'sftpuser',
+        before  => [Group['sftpuser']], 
     }
     file { '/srv/sftp/ericmars':
         ensure => 'directory',
