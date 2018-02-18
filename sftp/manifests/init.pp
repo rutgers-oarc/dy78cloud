@@ -32,63 +32,63 @@ class sftp{
     # dy78
     user { 'dy78' :
         groups  => 'sftpusers',
-        before  => Group['sftpusers'], 
+        require  => Group['sftpusers'], 
     }
     file { '/srv/sftp/dy78' :
         ensure => 'directory',
         mode   => '0701',
-        before  => File['/srv/sftp'],
+        require  => File['/srv/sftp'],
     }   
     file { '/srv/sftp/dy78/upload' :
         ensure => 'directory',
         mode   => '0701',
-        before  => File['/srv/sftp/dy78'],
+        require  => File['/srv/sftp/dy78'],
     }   
     file { '/srv/sftp/dy78/download' :
         ensure => 'directory',
         mode   => '0704',
-        before  => File['/srv/sftp/dy78'],
+        require  => File['/srv/sftp/dy78'],
     }   
 
     # dyang
     user { 'dyang' :
         groups  => 'sftpusers',
-        before  => Group['sftpusers'], 
+        require  => Group['sftpusers'], 
     }
     file { '/srv/sftp/dyang' :
         ensure => 'directory',
         mode   => '0701',
-        before  => File['/srv/sftp'],
+        require  => File['/srv/sftp'],
     }   
     file { '/srv/sftp/dyang/upload' :
         ensure => 'directory',
         mode   => '0701',
-        before  => File['/srv/sftp/dyang'],
+        require  => File['/srv/sftp/dyang'],
     }   
     file { '/srv/sftp/dyang/download' :
         ensure => 'directory',
         mode   => '0704',
-        before  => File['/srv/sftp/dyang'],
+        require  => File['/srv/sftp/dyang'],
     }   
 
     # ericmars
     user { 'ericmars' :
         groups  => 'sftpusers',
-        before  => Group['sftpusers'], 
+        require  => Group['sftpusers'], 
     }
     file { '/srv/sftp/ericmars' :
         ensure => 'directory',
         mode   => '0701',
-        before  => File['/srv/sftp'],
+        require  => File['/srv/sftp'],
     }   
     file { '/srv/sftp/ericmars/upload' :
         ensure => 'directory',
         mode   => '0701',
-        before  => File['/srv/sftp/ericmars'],
+        require  => File['/srv/sftp/ericmars'],
     }   
     file { '/srv/sftp/ericmars/download' :
         ensure => 'directory',
         mode   => '0704',
-        before  => File['/srv/sftp/ericmars'],
+        require  => File['/srv/sftp/ericmars'],
     }   
 }
