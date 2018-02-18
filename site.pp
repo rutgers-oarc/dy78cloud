@@ -51,6 +51,20 @@ node  /^master.*internal$/ {
     package { 'openssh-askpass' :
         ensure  => 'installed',
     }
+    group { 'sftpusers':
+        ensure => 'present',
+    }
+    file { '/srv/sftp/upload':
+        ensure => 'directory',
+        mode   => '0777'
+    }
+    # for our user
+    file { '/srv/sftp/download':
+        ensure => 'directory',
+        mode   => '0777'
+    }
+    
+
     # slurm
     service { 'slurmctld' :
         subscribe => File['masterslurm.conf'],
