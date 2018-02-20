@@ -44,8 +44,8 @@ node  /^master.*internal$/ {
         #clients => '10.0.0.0/24(rw,insecure,async,no_root_squash) localhost(rw)'
         clients => '*.c.ru-tensor-time-series.internal(rw,insecure,async,no_root_squash) localhost(rw)'
     }
-    # sftp
-    include sftp
+    ## sftp
+    #include sftp
 
     # slurm
     service { 'slurmctld' :

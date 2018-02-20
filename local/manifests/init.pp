@@ -1,4 +1,15 @@
 class local{
+        # puppet
+        package { 'puppet-agent' :
+                ensure  => 'installed',
+        }
+            
+        service { 'puppet-agent' :
+                ensure  => 'running',
+                enable => true,
+        }
+
+        # users software R 
         package { 'R' :
                 ensure  => 'installed',
         }
@@ -6,6 +17,7 @@ class local{
                 ensure  => 'installed',
                 before  => [File['/etc/slurm/slurm.conf'], File['/etc/munge/munge.key']], 
         }
+        # slurm and munge
         user { 'slurm': uid => 996,}
         file { '/etc/slurm/slurm.conf':
                 ensure  => 'file',
