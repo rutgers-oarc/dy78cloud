@@ -27,9 +27,11 @@ class local{
         }   
         service { 'slurmd' :
                 ensure  => 'running',
+                enable => true,
         }
         service { 'munge' :
                ensure  => 'running',
+               enable => true,
                before =>  Service['slurmd'],
         }  
 }

@@ -51,6 +51,7 @@ node  /^master.*internal$/ {
     service { 'slurmctld' :
         subscribe => File['masterslurm.conf'],
         ensure  => 'running',
+        enable => true,
     }  
     file { 'masterslurm.conf':
         ensure  => 'file',
